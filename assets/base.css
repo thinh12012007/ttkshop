@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --white-color: #fff;
+  --black-color: black;
+  --text-color: #333;
+  --main-color: #ee4d2d;
+  --border-color: #dbdbdb;
+  --primary-color: #f53e2d;
+}
+* {
+  box-sizing: inherit;
+
+  /* các thuộc tính sau này sẽ kết thừa box-sizing: border-box trong trang web  */
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.6em;
+  /* chiều cao của chữ  */
+  font-family: "Poppins", serif;
+  box-sizing: border-box;
+}
+.grid {
+  width: 100%;
+  margin: 0 auto;
+  /* chiều ngang tối đa là 1200px , do màn hình máy tính có chiều ngang lớn hơn
+    nên các chữ sẽ tự động lui vào trong để bằng 1200px đã cho  */
+}
+.grid__column-10 {
+  background-color: gray;
+  width: 80%;
+  height: 2695px;
+
+  background-image: url(./img/backgroundcolumn10.png);
+  opacity: 0.9;
+  z-index: 50;
+}
+
+@media (max-width: 700px) {
+  .grid__column-10 {
+    width: 100%;
+  }
+}
+.home__product-items {
+  border-radius: 15px !important;
+}
+.grid__column-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 12.6667%;
+  border-right: 10px solid #333;
+}
+.grid__column-6 {
+  overflow-y: auto;
+  border-left: 10px solid #333;
+  /* background-color: gray; */
+  width: 20% !important;
+  height: 100%;
+  position: fixed;
+  top: 150px;
+  right: 0px;
+  background-color: #fe4444;
+  /* margin-top: 100px;
+  width: 10px;
+  /* height: 1000px; */
+  /* background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  ); */
+  background-size: 20% 100%;
+  animation: colorChange 3s linear infinite;
+}
+video {
+  margin-left: -20px;
+}
+/* .grid__column-6 > video {
+  height: 90%;
+} */
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.grid__column-2-4 {
+  width: 100px;
+  padding-right: 10px;
+  width: 5%;
+  border-radius: 5px;
+}
+.grid__full-width {
+  width: 100%;
+  /* độ rộng tối đa  */
+}
+.grid__row {
+  display: flex;
+  /* các box sẽ hiển thị theo hàng ngang  */
+  flex-wrap: wrap;
+  /* các box sẽ hiển thị bên dưới hoặc bên trên nếu bị tràn  */
+  z-index: 50;
+}
+/* animation cho mã qr  */
+@keyframes animation_qr {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Modal  */
+/* .modal {
+  /* tạo phần khung chiếm toàn bộ màn hình  */
+/* position: fixed; */
+/* top: 0; */
+/* right: 0; */
+/* bottom: 0; */
+/* left: 0; */
+/* display: flex; */
+/* } */
+/* dùng display flex, sau đó margin auto để căn giữa cho trang web   */
+/* để hiển thị các màu đè lên nhau dùng z-index , cái nào có giá trị z-index lớn hơn thì sẽ nằm bên trên  */
+*/ .modal__overlay {
+  z-index: 50;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* tạo phần màu đen nhạt bao quanh khung tìm kiếm 
+    /* cho khung chiếm toàn bộ màn hình  */
+  animation: animation_qr ease-in 0.3s;
+  /* thêm animation cho phần viền đen  */
+  display: none;
+}
+/* /* tạo hiệu ứng động để hiện lên phần thông báo đăng ký  */
+@keyframes growth {
+  from {
+    transform: scale(70%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+.modal__body {
+  height: 500px;
+  width: 700px;
+  margin: auto;
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 5px;
+  /* thêm hiệu ứng động cho phần thông báo đăng ký  */
+  animation: growth linear 0.3s;
+  display: none;
+}
+/* Css cho chữ trở lại và đăng ký  */
+.form__controls {
+  margin-top: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+.form__controls_btn {
+  height: 25px;
+  min-width: 80px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.form__controls_btn:hover {
+  background-color: #dbdbdb;
+}
+.form__controls_btn--primary {
+  color: var(--white-color);
+  height: 25px;
+  min-width: 80px;
+  background: #ee4d2d;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+/* Trường hợp nút bị lỗi  */
+.form__controls_btn--disabled {
+  cursor: default;
+  filter: brightness(80%);
+  /* giảm độ sáng đi 80% */
+}
+/* pagination  */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pagination-items {
+  list-style: none;
+  margin: 0 8px;
+}
+
+.pagination-items-link {
+  border-radius: 2px;
+  text-decoration: none;
+  color: #939393;
+  font-size: 1.4rem;
+  font-weight: 600;
+  min-width: 40px;
+  height: 30px;
+  display: block;
+  /* thẻ a không có tích block nên không áp dụng được chiều ngang vì vậy cần phải thêm display block cho nó  */
+  text-align: center;
+  line-height: 30px;
+}
+.pagination-items-active .pagination-items-link {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+.pagination-items-active:hover {
+  opacity: 80%;
+}
+.pagination-items-icon-left {
+  margin-top: 4px;
+}
+.pagination-items-icon-right {
+  margin-top: 4px;
+}
+
+.catogory {
+  display: none;
+}
+
+.catogory.show {
+  display: block;
+}
+
+.catogory {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* width: 350px; */
+  height: 100%;
+  background-color: #fff;
+
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 999999999999999 !important;
+  overflow-y: auto !important;
+}
+
+.catogory.show {
+  display: block;
+}
+.catogory > ul {
+  margin-left: -30px;
+}
+.menu-button {
+  z-index: 9999999999 !important;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  width: 50px;
+  height: 50px;
+}
+
+.menu-button i {
+  font-size: 24px;
+}
+
+.menu-button:hover {
+  background-color: #009eff;
+}
+#catogoryMenu {
+  padding-left: 20px;
+  width: 300px;
+}
+
+/* .grid__column-6 {
+  position: fixed;
+  right: 0px;
+} */
+
+.grid__column-6 {
+  width: 30%; /* Điều chỉnh theo ý bạn */
+  margin: auto;
+  overflow: hidden !important;
+}
+
+.scroll-container {
+  width: 100%;
+  height: 900px; /* Điều chỉnh chiều cao theo ý bạn */
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden !important;
+  right: 0;
+}
+
+.video-gioithieu,
+.video-gioithieuchuot,
+.video-sieugiamgia,
+.video-shopttk,
+.video-suavinamilk,
+.video-mypham {
+  /* padding: 20px; */
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.slider-container {
+  position: fixed;
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden !important;
+}
+
+input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  position: absolute;
+  top: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0; /* Ẩn dấu tròn mặc định */
+  height: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 0; /* Ẩn dấu tròn mặc định */
+  height: 0;
+}
+
+.slider-icon {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  font-size: 24px;
+  overflow: hidden !important;
+}
+.uudai {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+}

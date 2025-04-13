@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chưa Có Tài Khoản</title>
+    <link rel="stylesheet" href="./assets/base.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./assets/main.css" />
+    <link rel="stylesheet" href="bannerdong.css" />
+    <link rel="stylesheet" href="denled.css" />
+    <link rel="stylesheet" href="gioithieushop.css" />
+    <link rel="stylesheet" href="gioithieuchuot.css" />
+    <link rel="stylesheet" href="sieugiamgia.css" />
+    <link rel="stylesheet" href="ttk.css" />
+    <link rel="stylesheet" href="suavinamilk.css" />
+    <link rel="stylesheet" href="mypham.css" />
+    <script src="./script/hangsort1.js"></script>
+    <!-- sử dụng thư viện fontawesome để thêm icon  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      /* Đặt màu nền đẹp với gradient */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(120deg, #ff758c, #ff7eb3);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95); /* Nền trắng trong suốt */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 450px;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: 700;
+      }
+
+      .info {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 25px;
+      }
+
+      .btn-register {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .btn-register:hover {
+        background-color: #218838;
+        transform: translateY(-5px);
+      }
+
+      .back-link {
+        display: block;
+        margin-top: 20px;
+        font-size: 1rem;
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      /* Hiệu ứng nút đăng ký */
+      .btn-register:active {
+        transform: translateY(2px);
+      }
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 100px;
+        margin: auto;
+        margin-left: 40%;
+      }
+      .btn-login {
+        margin-left: 1px;
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .btn-login:hover {
+        background-color: #0056b3;
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="video-container">
+        <video autoplay loop muted>
+          <source src="./assets/img/videologo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <h2>Bạn chưa có tài khoản ?</h2>
+      <p class="info" style="font-size: 16px; font-weight: 700">
+        Để trải nghiệm nhiều tính năng hấp dẫn, bạn có thể đăng ký ngay bây giờ!
+      </p>
+
+      <!-- Nút đăng ký -->
+      <a href="register.html" class="btn-register">Đăng ký ngay</a>
+
+      <!-- Liên kết quay lại đăng nhập -->
+      <div
+        style="
+          font-size: 16px;
+          font-weight: 700;
+          color: black;
+          margin-top: 10px;
+        "
+      >
+        Hoặc
+      </div>
+      <!-- Đã có tài khoản? -->
+      <p>
+        <a href="login.html" class="btn-login">Đăng nhập</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sắp xếp sản phẩm theo giá</title>
+    <style>
+      .product {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Danh sách sản phẩm</h1>
+    <select id="sort" onchange="sortProducts()">
+      <option value="asc">Giá tăng dần</option>
+      <option value="desc">Giá giảm dần</option>
+    </select>
+    <div id="product-list">
+      <div class="product" data-price="150000">
+        <h2>Sản phẩm A</h2>
+        <p>Giá: 150,000 VND</p>
+      </div>
+      <div class="product" data-price="100000">
+        <h2>Sản phẩm B</h2>
+        <p>Giá: 100,000 VND</p>
+      </div>
+      <div class="product" data-price="200000">
+        <h2>Sản phẩm C</h2>
+        <p>Giá: 200,000 VND</p>
+      </div>
+    </div>
+    <script src="sapxepsanpham.js"></script>
+  </body>
+</html>
